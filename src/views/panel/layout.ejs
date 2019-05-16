@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="nofollow" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"
+    integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css"
+    integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+  <title> <%= title %> </title>
+  <style>
+    [v-cloak]>* {
+      display: none
+    }
+  </style>
+</head>
+
+<body>
+
+  <% if (template !== 'panel/redis-auth') { %>
+  <% include partials/header %>
+  <% } %>
+
+  <%- include(template) %>
+
+  <% if (environment === 'development') { %>
+
+  <link rel="stylesheet" href="/css/app.css">
+
+  <script src="/js/app.js"></script>
+
+  <% } else { %>
+
+  <%- include ../partials/styles %>
+  <%- include ../partials/scripts %>
+
+  <% } %>
+</body>
+
+</html>

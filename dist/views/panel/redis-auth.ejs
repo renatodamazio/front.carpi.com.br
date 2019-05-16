@@ -1,0 +1,14 @@
+<div id="redis-login" style="height: 100%;" v-cloak><form class="form-row align-items-center align-middle col-lg-4 col-md-4 p-5" method="post"><div class="form-group"><h1 class="pb-4 pt-1 text-center">Redis Panel Control</h1><div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-envelope"></i></div></div><input
+          type="email"
+          name="email"
+          :disabled="loading"
+          v-model="email"
+          placeholder="E-mail"
+          class="form-control"></div></div><div class="form-group"><div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-key"></i></div></div><input
+          type="password"
+          name="password"
+          :disabled="loading"
+          v-model="password"
+          placeholder="Password"
+          autocomplete="new-password"
+          class="form-control"></div></div><div class="text-center d-inline-block w-100"><button v-if="!loading" type="button" @click="login()" class="btn btn-lg btn-primary mt-3 mb-2 text-center">Entrar</button><button v-if="loading" type="button" disabled class="btn btn-lg btn-primary mt-3 mb-3 text-center">Aguarde...</button></div></form></div>

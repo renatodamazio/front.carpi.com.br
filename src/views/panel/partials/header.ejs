@@ -1,0 +1,32 @@
+<header id="redis-header" class="d-inline-block w-100">
+  <input type="hidden" name="template" id="template" value="<%= template %>">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/panel/">Redis Panel Control</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" :class="{'active': template === 'panel/redis-control'}">
+            <a class="nav-link" href="/panel/">
+              Dashboard
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item" :class="{'active': template === 'panel/redis-log'}">
+            <a class="nav-link" href="/panel/logs">Logs</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#!" @click="logout">Sair</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </nav>
+</header>

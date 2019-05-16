@@ -1,0 +1,114 @@
+<section id="redis" class="pb-5" v-cloak>
+
+  <input type="hidden" name="data" id="data" value="<%= data %>">
+  <input type="hidden" name="info" id="info" value="<%= JSON.stringify(info) %>">
+
+  <div class="container pt-4">
+
+    <div class="row">
+      <div class="col-lg-6 d-inline">
+        <h1><b>Keys</b></h1>
+      </div>
+    </div>
+
+    <form action="/panel/keys/flushall" class="form-keys-flushall mt-4" method="POST">
+      <button type="button" v-if="!clearAll" class="btn btn-light float-right" @click="toggleClearAll()">
+        <i class="fas fa-skull"></i>&nbsp;&nbsp;Limpar&nbsp;<b> todo </b>&nbsp;cache
+      </button>
+      <div v-else class="text-right">
+        <button type="submit" name="button" class="btn btn-dark">
+          Sim
+        </button>
+        &nbsp;&nbsp;
+        <button class="btn btn-info" @click="toggleClearAll()">
+          Não
+        </button>
+      </div>
+    </form>
+
+    <div class="col-lg-12 pt-4 pb-4 text-right">
+      <div class="btn-group" role="group" aria-label="Basic example">
+
+        <div class="btn btn-light">
+          <label for="all">Tudo</label>
+          <input id="all" type="radio" name="show" value="all" v-model="view_">
+        </div>
+
+        <div class="btn btn-light text-danger">
+          <label for="total-erro">Erros: {{total.errors}}</label>
+          <input id="total-erro" type="radio" value="error" v-model="view_">
+        </div>
+
+        <div class="btn btn-light text-success">
+          <label for="total-online">Online: {{total.online}}</label>
+          <input id="total-online" type="radio" value="success" v-model="view_">
+        </div>
+
+        <div class="btn btn-light text-success" v-if="report.show">
+          <button v-if="!report.loading" type="button" @click="generateReport()" class="btn btn-primary mt-2">Gerar relatório</button>
+          <button v-if="report.loading" type="button" disabled class="btn btn-primary mt-2">Gerando...</button>
+        </div>
+      </div>
+    </div>
+
+    <span style="opacity:0;">{{keys.length}}</span>
+
+    <ul class="keys list-group mt-5 col-lg-12 p-0" v-if="keys.length > 0">
+      <li v-for="(key, i) in keys" :key="key.key" class="list-group-item">
+        <div class="row">
+          <form :action="'/panel/keys/flush/' + key.key.replace(/[/']/g, '__')" method="POST" class="col-lg-12">
+            <div class="col-lg-2 pt-2 text-center">
+
+              <a href="javascript:void(0)" v-if="!show[i]" @click="showOptions(i)" class="btn btn-danger">
+                <i class="fas fa-trash-alt"></i> &nbsp; Remover
+              </a>
+
+              <div v-show="show[i]">
+                <button type="submit" name="button" class="btn btn-dark">
+                  Sim
+                </button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-info" @click="showOptions(i)">
+                  Não
+                </button>
+
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h5>
+                    <i class="fas " :class="key.key.match(/request:error/) ? 'fa-bug text-danger' : 'fa-globe text-success'" style="font-size:13px;">
+                    </i>
+                    <b class="pl-2 " :class="key.key.match(/request:error/) ? 'text-danger' : ' text-success'">
+                      {{ key.key }}
+                    </b>
+                  </h5>
+                  <span style="font-size: 13px;">
+                    <i class="fas fa-tombstone"></i>
+                    Atualização em: &nbsp;&nbsp;
+                    <i class="text-info" v-date :data-expire="key.expire"></i>
+                  </span>
+                </div>
+
+                <div class="col-lg-12 pull-left mt-2 px-2">
+                  <div class="card">
+                    <div class="card-body text-muted card-header">
+                      <cod :resp="key.value"></cod>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+    </ul>
+
+    <ul v-else class="list-group text-center">
+      <li class="list-group-item list-group-item-light">
+        <p class="mb-0">Não existem chaves!</p>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,295 @@
+.margin-left {
+  margin-left: $margin-left !important;
+}
+
+.margin-right {
+  margin-right: $margin-right !important;
+}
+
+.margin-top {
+  margin-top: $margin-top !important;
+}
+
+.margin-bottom {
+  margin-bottom: $margin-bottom !important;
+}
+
+.lg-margin-left {
+  margin-left: $lg-margin-left !important;
+}
+
+.lg-margin-right {
+  margin-right: $lg-margin-right !important;
+}
+
+.lg-margin-top {
+  margin-top: $lg-margin-top !important;
+}
+
+.lg-margin-bottom {
+  margin-bottom: $lg-margin-bottom !important;
+}
+
+.md-margin-left {
+  margin-left: $md-margin-left !important;
+}
+
+.md-margin-right {
+  margin-right: $md-margin-right !important;
+}
+
+.md-margin-top {
+  margin-top: $md-margin-top !important;
+}
+
+.md-margin-bottom {
+  margin-bottom: $md-margin-bottom !important;
+}
+
+.no-margin-right {
+  margin-right: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+  margin-left: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.padding-left {
+  padding-left: $padding-left !important;
+}
+
+.padding-right {
+  padding-right: $padding-right !important;
+}
+
+.padding-top {
+  padding-top: $padding-top !important;
+}
+
+.padding-bottom {
+  padding-bottom: $padding-bottom !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block,
+.show {
+  display: inline-block !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.no-float {
+  float: none !important;
+}
+
+.both {
+  clear: both;
+}
+
+.half {
+  width: 50%;
+  float: left;
+}
+
+.no-link {
+  cursor: default !important;
+}
+
+.center {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.none {
+  display: none !important;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-border-radius {
+  border-radius: 0 !important;
+}
+
+.no-border-left {
+  border-left: 0 !important;
+}
+
+.no-border-top {
+  border-top: 0 !important;
+}
+
+.no-border-bottom {
+  border-bottom: 0 !important;
+}
+
+.no-border-right {
+  border-right: 0 !important;
+}
+
+.no-background {
+  background: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.align-middle {
+  display: inline-block;
+  vertical-align: middle;
+  float: none !important;
+  margin-right: -5px;
+  position: relative;
+}
+
+.align-top {
+  display: inline-block;
+  vertical-align: top;
+  float: none;
+  position: relative;
+}
+
+.align-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+  float: none;
+  position: relative;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table-align-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.full {
+  width: 100% !important;
+  display: block;
+  float: left;
+  position: relative;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.white {
+  color: #fff !important;
+}
+
+.sticky {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 9999;
+}
+
+.border-dotted {
+  margin: 0px;
+  border-bottom: 2px dotted #e7e7e7;
+  margin-bottom: 35px;
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999999999999;
+  transition: .2s cubic-bezier(.55, 0, .1, 1);
+  opacity: 1;
+  visibility: visible;
+}
